@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku — desafio de lógica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="intro">
+      <p class="eyebrow">Desafio de lógica</p>
+      <h1>Sudoku</h1>
+      <p>Relaxe, concentre-se e complete a grade no seu ritmo.</p>
+    </header>
+
+    <section class="game-card" aria-labelledby="challenge-title">
+      <div class="card-heading">
+        <div>
+          <h2 id="challenge-title">Novo desafio</h2>
+          <p>Há uma única solução para este desafio.</p>
+        </div>
+        <span class="status" id="status" aria-live="polite">Em andamento</span>
+      </div>
+
+      <div class="toolbar">
+        <label for="difficulty">Dificuldade
+          <select id="difficulty">
+            <option value="easy">Fácil</option>
+            <option value="medium" selected>Média</option>
+            <option value="hard">Difícil</option>
+          </select>
+        </label>
+        <div class="stats" aria-label="Estatísticas do jogo">
+          <span>⏱ <strong id="timer">00:00</strong></span>
+          <span>Erros <strong id="mistakes">0</strong>/3</span>
+          <span>Pontos <strong id="score">1000</strong></span>
+        </div>
+      </div>
+
+      <div class="sudoku" id="sudoku" aria-label="Grade de Sudoku"></div>
+
+      <div class="actions">
+        <button class="button button-new" id="new-game-button" type="button">↻ Novo jogo</button>
+        <button class="button button-secondary" id="clear-button" type="button">Limpar</button>
+        <button class="button button-secondary" id="hint-button" type="button">Usar dica (-100)</button>
+        <button class="button button-primary" id="solution-button" type="button">Mostrar solução</button>
+      </div>
+    </section>
+
+    <aside class="hint" aria-labelledby="hint-title">
+      <h2 id="hint-title">Dica inicial</h2>
+      <p>Comece pelas linhas, colunas ou blocos que já têm mais números. Em cada casa, elimine os números que aparecem na mesma linha, coluna e bloco.</p>
+    </aside>
+
+    <section class="rules" aria-labelledby="rules-title">
+      <h2 id="rules-title">Regras</h2>
+      <p>Use os números de 1 a 9 uma única vez em cada linha, coluna e bloco 3×3. As casas azuis são as pistas originais e não podem ser alteradas.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
